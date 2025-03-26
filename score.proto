@@ -45,6 +45,6 @@ message PaperScoreResponse {
 
 service ScoreGetter {
     rpc DatasetScore (DatasetScoreRequest) returns (stream DatasetScoreResponse) {}
-    rpc PaperScore (DatasetScoreRequest) returns (stream PaperScoreResponse) {}
+    rpc PaperScore (PaperScoreRequest) returns (stream PaperScoreResponse) {}
     rpc Populate (PopulateRequest) returns (Empty) {}
 }
