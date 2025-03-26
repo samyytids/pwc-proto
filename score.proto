@@ -12,6 +12,10 @@ enum PopulateType {
     Paper =1;
 }
 
+message PaperBundle {
+    repeated bytes ids =1;
+}
+
 message Empty {
     
 }
@@ -23,7 +27,7 @@ message PopulateRequest {
 message PaperScoreRequest {
     string query =1;
     uint32 num_results =2;
-    repeated bytes ids =3;
+    map<uint32, PaperBundle> ids =3;
 }
 
 message DatasetScoreRequest {
