@@ -27,13 +27,13 @@ message PopulateRequest {
 message PaperScoreRequest {
     string query =1;
     uint32 num_results =2;
-    map<uint32, PaperBundle> ids =3;
+    map<int32, PaperBundle> ids =3;
 }
 
 message DatasetScoreRequest {
     string query =1;
     uint32 num_results =2;
-    repeated uint32 ids =3;
+    repeated int32 ids =3;
 }
 
 message DatasetScoreResponse { 
