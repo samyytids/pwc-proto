@@ -36,19 +36,13 @@ message DatasetScoreRequest {
     repeated int32 ids =3;
 }
 
-message DatasetScoreResponse { 
+message ScoreResponse { 
     int32 dataset_id =1;
     float score =2;
 }
 
-message PaperScoreResponse { 
-    bytes paper_id =1;
-    int32 dataset_id = 2;
-    float score =3;
-}
-
 service ScoreGetter {
-    rpc DatasetScore (DatasetScoreRequest) returns (stream DatasetScoreResponse) {}
-    rpc PaperScore (PaperScoreRequest) returns (stream PaperScoreResponse) {}
+    rpc DatasetScore (DatasetScoreRequest) returns (stream ScoreResponse) {}
+    rpc PaperScore (PaperScoreRequest) returns (stream ScoreResponse) {}
     rpc Populate (PopulateRequest) returns (Empty) {}
 }
