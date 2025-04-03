@@ -30,7 +30,7 @@ message Bm25PaperScoreRequest {
     map<int32, PaperBundle> ids =3;
 }
 
-message DatasetScoreRequest {
+message Bm25DatasetScoreRequest {
     string query =1;
     uint32 num_results =2;
     repeated int32 ids =3;
