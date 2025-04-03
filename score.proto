@@ -42,7 +42,7 @@ message ScoreResponse {
 }
 
 service ScoreGetter {
-    rpc DatasetScore (Bm25DatasetScoreRequest) returns (stream ScoreResponse) {}
+    rpc Bm25DatasetScore (Bm25DatasetScoreRequest) returns (stream ScoreResponse) {}
     rpc Bm25PaperScore (Bm25PaperScoreRequest) returns (stream ScoreResponse) {}
     rpc Populate (PopulateRequest) returns (Empty) {}
 }
