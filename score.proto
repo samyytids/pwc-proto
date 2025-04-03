@@ -24,7 +24,7 @@ message PopulateRequest {
     PopulateType populate_type =1;
 }
 
-message PaperScoreRequest {
+message Bm25PaperScoreRequest {
     string query =1;
     uint32 num_results =2;
     map<int32, PaperBundle> ids =3;
@@ -43,6 +43,6 @@ message ScoreResponse {
 
 service ScoreGetter {
     rpc DatasetScore (DatasetScoreRequest) returns (stream ScoreResponse) {}
-    rpc PaperScore (PaperScoreRequest) returns (stream ScoreResponse) {}
+    rpc Bm25PaperScore (Bm25PaperScoreRequest) returns (stream ScoreResponse) {}
     rpc Populate (PopulateRequest) returns (Empty) {}
 }
