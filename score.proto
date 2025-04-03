@@ -24,10 +24,10 @@ message PopulateRequest {
     PopulateType populate_type =1;
 }
 
-message Bm25PaperScoreRequest {
+message RedisPaperScoreRequest {
     string query =1;
     uint32 num_results =2;
-    map<int32, PaperBundle> ids =3;
+    repeated int32 dataset_ids = 3;
 }
 
 message DatasetScoreRequest {
@@ -43,6 +43,6 @@ message ScoreResponse {
 
 service ScoreGetter {
     rpc DatasetScore (DatasetScoreRequest) returns (stream ScoreResponse) {}
-    rpc Bm25PaperScore (Bm25PaperScoreRequest) returns (stream ScoreResponse) {}
+    rpc RedisPaperScore (RedisPaperScoreRequest) returns (stream ScoreResponse) {}
     rpc Populate (PopulateRequest) returns (Empty) {}
 }
