@@ -42,7 +42,7 @@ message ScoreResponse {
 }
 
 service ScoreGetter {
-    rpc DatasetScore (RedisDatasetScoreRequest) returns (stream ScoreResponse) {}
+    rpc RedisDatasetScore (RedisDatasetScoreRequest) returns (stream ScoreResponse) {}
     rpc RedisPaperScore (RedisPaperScoreRequest) returns (stream ScoreResponse) {}
     rpc Populate (PopulateRequest) returns (Empty) {}
 }
