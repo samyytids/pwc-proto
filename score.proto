@@ -25,13 +25,13 @@ message PopulateRequest {
 }
 
 message RedisPaperScoreRequest {
-    string query =1;
+    repeated float embedding =1;
     uint32 num_results =2;
     repeated int32 dataset_ids = 3;
 }
 
-message DatasetScoreRequest {
-    string query =1;
+message RedisDatasetScoreRequest {
+    repeated float embedding =1;
     uint32 num_results =2;
     repeated int32 ids =3;
 }
@@ -42,7 +42,7 @@ message ScoreResponse {
 }
 
 service ScoreGetter {
-    rpc DatasetScore (DatasetScoreRequest) returns (stream ScoreResponse) {}
+    rpc DatasetScore (RedisDatasetScoreRequest) returns (stream ScoreResponse) {}
     rpc RedisPaperScore (RedisPaperScoreRequest) returns (stream ScoreResponse) {}
     rpc Populate (PopulateRequest) returns (Empty) {}
 }
