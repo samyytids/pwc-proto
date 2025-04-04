@@ -27,7 +27,7 @@ message PopulateRequest {
 message Bm25PaperScoreRequest {
     string query =1;
     uint32 num_results =2;
-    map<int32, PaperBundle> ids =3;
+    repeated int32 dataset_ids =3;
 }
 
 message Bm25DatasetScoreRequest {
